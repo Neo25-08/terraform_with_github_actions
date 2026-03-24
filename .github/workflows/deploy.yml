@@ -40,4 +40,4 @@ jobs:
       # Upload website to S3 bucket
       - name: Upload website to S3
         run: |
-          aws s3 sync website/ s3://${{ secrets.BUCKET_NAME }} --delete
+          aws s3 sync website/ s3://${{ vars.BUCKET_NAME }} --delete
