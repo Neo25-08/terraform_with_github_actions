@@ -37,7 +37,7 @@ jobs:
           terraform init
           terraform apply -auto-approve -var="bucket_name=${{ vars.BUCKET_NAME }}"
 
-      # Upload website to S3
+      # Upload website to S3 bucket
       - name: Upload website to S3
         run: |
           aws s3 sync website/ s3://${{ secrets.BUCKET_NAME }} --delete
